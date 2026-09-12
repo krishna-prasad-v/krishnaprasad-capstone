@@ -1,0 +1,4 @@
+# Direct dependencies for the project
+anthropic>=1.4.0
+python-dotenv>=1.2.3
+

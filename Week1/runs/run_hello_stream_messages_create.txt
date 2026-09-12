@@ -1,0 +1,48 @@
+Enter your question: Explain ThreadPool in Python in less than 5 steps.
+-------------------------------------------------------------------------------------------------------
+Question to LLM: Explain ThreadPool in Python in less than 5 steps.
+-------------------------------------------------------------------------------------------------------
+Start of streaming response
+-------------------------------------------------------------------------------------------------------
+# ThreadPool in Python
+
+## Quick Overview
+ThreadPool manages a pool of worker threads to execute tasks concurrently, avoiding the overhead of creating/destroying threads repeatedly.
+
+## 5 Steps
+
+1. **Import & Create**
+   ```python
+   from multiprocessing.pool import ThreadPool
+   pool = ThreadPool(processes=4)  # 4 worker threads
+   ```
+
+2. **Submit Tasks**
+   ```python
+   results = pool.map(function, iterable)
+   # or
+   result = pool.apply_async(function, args)
+   ```
+
+3. **Get Results**
+   ```python
+   data = result.get(timeout=5)  # Wait for result
+   ```
+
+4. **Close Pool**
+   ```python
+   pool.close()
+   pool.join()  # Wait for all tasks to complete
+   ```
+
+5. **Use Context Manager (Recommended)**
+   ```python
+   with ThreadPool(4) as pool:
+       results = pool.map(function, data)
+   ```
+
+## Key Benefit
+Reuses threads instead of creating new ones per task → **faster, less memory overhead**.
+-------------------------------------------------------------------------------------------------------
+End of streaming response
+-------------------------------------------------------------------------------------------------------
