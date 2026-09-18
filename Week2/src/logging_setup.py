@@ -1,6 +1,6 @@
+from pathlib import Path
 import json
 import logging
-import os
 
 class JsonFormatter(logging.Formatter):
     def format(self, record):
@@ -22,14 +22,23 @@ class JsonFormatter(logging.Formatter):
 # define a function to set up logging with the JSON formatter    
 def configure_logging(log_level=logging.WARNING):
     json_formatter = JsonFormatter(datefmt="%Y-%m-%d %H:%M:%S")
-    stream_handler = logging.StreamHandler()
-    stream_handler.setFormatter(json_formatter)
 
-    file_handler = logging.FileHandler("pipeline_starter.log", mode = 'w')
+# Set the stream handler - if required.
+    # stream_handler = logging.StreamHandler()
+    # stream_handler.setFormatter(json_formatter)
+
+# Set the file path for the log file
+    current_file_path = Path(__file__).resolve()
+    src_folder = current_file_path.parent
+    week2_folder = src_folder.parent
+    log_file = week2_folder / "Logs" / "pipeline_starter.log"
+
+# Set the file handler
+    file_handler = logging.FileHandler(log_file, mode = 'w', encoding = 'utf-8')
     file_handler.setFormatter(json_formatter)
 
     logging.basicConfig(level=log_level, handlers=[file_handler])
 
-     # Silence verbose 3rd-party library logs
-    for stop_logger in ["httpx", "httpx2", "httpcore", "httpcore2", "anthropic"]:
-       logging.getLogger(stop_logger).setLevel(logging.WARNING)
+# Silence 3rd-party library logs
+    for prevent_logger in ["httpx", "httpx2", "httpcore", "httpcore2", "anthropic"]:
+       logging.getLogger(prevent_logger).setLevel(logging.WARNING)

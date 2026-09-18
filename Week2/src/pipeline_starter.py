@@ -22,6 +22,19 @@ client = AsyncAnthropic()
 model = "claude-haiku-4-5-20251001"
 
 #********************************************************************************************
+# Get CSV file path
+#********************************************************************************************
+def get_csv_file_path() -> Path:
+   current_file_path = Path(__file__).resolve()
+   src_folder = current_file_path.parent
+   week2_folder = src_folder.parent
+   csv_file = week2_folder / "data" / "questions.csv"
+   if not csv_file.exists():
+        raise FileNotFoundError(f"CSV file not found at: {csv_file}")
+   
+   return csv_file 
+
+#********************************************************************************************
 # Read questions from CSV file
 #********************************************************************************************
 def read_questions_from_csv(csv_file_path: Path) -> list[Question]:
@@ -61,8 +74,7 @@ async def ask_llm(question: Question) -> Answer:
 # wrap the rety logic around the ask_llm function
 #********************************************************************************************
 async def ask_llm_with_retry(question: Question, max_retries: int = 3) -> Answer:
-    max_retries = max_retries + 1  # Adjust for initial attempt
-    for attempt in range(max_retries):
+    for attempt in range(max_retries+1):
         if attempt == 0:
             logger.info(f"Initial attempt for question: {question.text}")
 
@@ -77,23 +89,33 @@ async def ask_llm_with_retry(question: Question, max_retries: int = 3) -> Answer
             if attempt == max_retries:
                 logger.exception(f"Max retries reached for question: {question.text}.")
                 raise  # Re-raise the exception if max retries reached
+
+            if attempt == 0:
+                logger.warning("Initial attempt: failed") 
             else:
-                logger.warning(f"Retry attempt: {attempt} for question: {question.text}")
-                await asyncio.sleep(2 ** attempt)  # Exponential backoff 
+                logger.warning(f"Retry attempt: {attempt} failed: question: {question.text}")
+
+            await asyncio.sleep(2 ** attempt)  # Exponential backoff 
 
 #********************************************************************************************
 # main()
 #********************************************************************************************            
 async def main():
     configure_logging(logging.INFO)
-    csv_path = Path("Week2/data/questions.csv")
     logger.info("Pipeline started.")
+
+    try:
+        csv_path = get_csv_file_path()
+        question_list = read_questions_from_csv(csv_path)
+    except FileNotFoundError:
+        logger.exception(f"CSV file not found")
+        return
+    except Exception:
+        logger.exception("Cannot read CSV file")    
+        return  
 
 # currently not used, but can be used to store all answers if needed
 #   answer_list = []  
-
-# Read questions from the CSV file and create a list of Question objects
-    question_list = read_questions_from_csv(csv_path)
 
 # Process question_list in chunks of 5
     for i in range(0, len(question_list), 5):
