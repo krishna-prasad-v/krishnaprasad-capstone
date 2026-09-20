@@ -16,8 +16,14 @@ krishnaprasad-capstone/
 │   ├── src/
 │   └── runs/
 │
-└── Week2/
+├── Week2/
+│   ├── data/
+│   ├── Logs/
+│   └── src/
+│
+└── Week4/
     ├── data/
+    ├── logs/
     └── src/
 ```
 
