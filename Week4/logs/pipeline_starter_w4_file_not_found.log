@@ -1,0 +1,2 @@
+{"timestamp": "2026-09-20 09:30:12", "level": "INFO", "logger": "__main__", "message": "Pipeline started."}
+{"timestamp": "2026-09-20 09:30:12", "level": "ERROR", "logger": "__main__", "message": "CSV file not found at: Week4\\data\\questions.csv"}
