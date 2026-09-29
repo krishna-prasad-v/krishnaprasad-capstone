@@ -21,21 +21,34 @@ krishnaprasad-capstone/
 │   ├── Logs/
 │   └── src/
 │
-└── Week4/
+├── Week4/
+│   ├── data/
+│   ├── logs/
+│   └── src/
+│
+└── mp1/
     ├── data/
-    ├── logs/
-    └── src/
+    ├── docs/
+    ├── src/
+    ├── mp1_comparison.md
+    └── mp1_writeup.md
 ```
 
 ### .env file
+#### Week 1, Week 2, Week 4
 ```text
 ANTHROPIC_API_KEY=<KEY>
+```
+#### mp1
+```text
+OPENAI_API_KEY=<KEY>
+OPENAI_BASE_URL=<Vocareum_URL>
 ```
 
 ## 📝 Technologies Used
 * **Language:**         Python 3.14.3
-* **LLM:**              Anthropic Claude
-* **SDK:**              Anthropic Client SDK
+* **LLM:**              Anthropic Claude (Week 1, Week 2, Week 4), OpenAI (mp1)
+* **SDK:**              Anthropic SDK (Week 1, Week 2, Week 4), OpenAI SDK (mp1)
 * **Version Control:**  Git & GitHub
 * **Environment Management:** Python .venv
 
