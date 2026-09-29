@@ -34,6 +34,10 @@ krishnaprasad-capstone/
     └── mp1_writeup.md
 ```
 
+### requirements.txt
+* mp1 -> `mp1/docs/requirements.txt`
+* rest of the repo -> `requirements.txt`
+
 ### .env file
 #### Week 1, Week 2, Week 4
 ```text
