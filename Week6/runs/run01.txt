@@ -1,0 +1,13 @@
+The user question is relevant to the corpus text file.
+LLM answers correctly from the retrieved context and gives the citations.
+
+
+*****************************************************************************************************
+
+user_query: What is a Final class?
+
+
+--- LLM Answer ---
+A final class is a class that cannot be inherited. It is declared by adding the `FINAL` keyword to the `CLASS DEFINITION` statement: `CLASS <class_name> DEFINITION FINAL ...`. For global classes,this is set by selecting the Final checkbox on the Properties tab in the Class Builder. If a subclass tries to inherit from a final class using `INHERITING FROM`, a compilation syntax error occurs. [Chunk 111] [Chunk 112]
+
+*****************************************************************************************************

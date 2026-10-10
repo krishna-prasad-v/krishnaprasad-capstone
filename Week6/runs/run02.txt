@@ -1,0 +1,12 @@
+The user question is not relevant to the corpus text file.
+The LLM correctly answers that the provided context does not contain the information.
+
+*****************************************************************************************************
+
+user_query: What is an IDoc and how is it used in ABAP?
+
+
+--- LLM Answer ---
+The provided context does not contain information about IDocs or how they are used in ABAP. The chunks cover topics such as accessing class components, working with events, Quick Fix and refactoring in the ABAP development tools, constructor expressions in Release 7.40 (`NEW`, `VALUE`, `DATA(...)`), and UML object diagrams. To answer your question, you would need a source that covers IDocs, such as SAP documentation on ALE/IDoc interfaces.
+
+******************************************************************************************************
