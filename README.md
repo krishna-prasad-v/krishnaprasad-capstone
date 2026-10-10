@@ -26,17 +26,17 @@ krishnaprasad-capstone/
 │   ├── logs/
 │   └── src/
 │
-├── Week6/
-│   ├── corpus_files/
-│   ├── runs/
-│   └── src/
+├── mp1/
+│   ├── data/
+│   ├── docs/
+│   ├── src/
+│   ├── mp1_comparison.md
+│   └── mp1_writeup.md
 │
-└── mp1/
-    ├── data/
-    ├── docs/
-    ├── src/
-    ├── mp1_comparison.md
-    └── mp1_writeup.md
+└── Week6/
+    ├── corpus_files/
+    ├── runs/
+    └── src/
 ```
 
 ### requirements.txt
@@ -60,12 +60,16 @@ OPENAI_BASE_URL=<Vocareum_URL>
 ```
 
 ## 📝 Technologies Used
-* **Language:**         Python 3.14.3
-* **LLM** Anthropic Claude (Week 1, Week 2, Week 4, Week 6), Voyage AI (Week 6), OpenAI (mp1)
-* **Embedding Model for RAG** Voyage AI 
-* **SDK:**              Anthropic SDK, Voyage AI SDK, OpenAI SDK (mp1)
-* **Version Control:**  Git & GitHub
-* **Environment Management:** Python .venv
+* **Language:**                 Python 3.14.3
+* **LLM**                       Anthropic Claude 
+* **Embedding Model for RAG**   Voyage AI 
+* **SDK:**                      Anthropic SDK, Voyage AI SDK
+* **Version Control:**          Git & GitHub
+* **Environment Management:**   Python .venv
+
+Note: for mp1:
+* **LLM**                       Open AI
+* **SDK:**                      OpenAI SDK
 
 ---
 *Created and maintained by Krishna Prasad.*
