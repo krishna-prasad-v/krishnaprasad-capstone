@@ -8,6 +8,6 @@ user_query: What is a Final class?
 
 
 --- LLM Answer ---
-A final class is a class that cannot be inherited. It is declared by adding the `FINAL` keyword to the `CLASS DEFINITION` statement: `CLASS <class_name> DEFINITION FINAL ...`. For global classes,this is set by selecting the Final checkbox on the Properties tab in the Class Builder. If a subclass tries to inherit from a final class using `INHERITING FROM`, a compilation syntax error occurs. [Chunk 111] [Chunk 112]
+A final class is a class that cannot be inherited [Chunk 111][Chunk 112]. It is declared by adding the `FINAL` keyword to the `CLASS DEFINITION` statement (`CLASS <class_name> DEFINITION FINAL ...`). For global classes, this is setby selecting the Final checkbox on the Properties tab in the Class Builder [Chunk 112]. If a subclass tries to inherit from a final class using `INHERITING FROM`, a compilation syntax error occurs, so final classes prevent further functional extension through inheritance [Chunk 112].
 
 *****************************************************************************************************

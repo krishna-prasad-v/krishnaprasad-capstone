@@ -54,7 +54,7 @@ def generate_embeddings( chunks: str | list[str], model = "voyage-4-lite", input
     result = vo.embed(texts = input, 
                       model = model, 
                       input_type = input_type,
-                      output_dimension = 256)
+                      output_dimension = 1024)
 
     return result.embeddings if is_list else result.embeddings[0]  
 
