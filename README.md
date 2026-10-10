@@ -26,6 +26,11 @@ krishnaprasad-capstone/
 │   ├── logs/
 │   └── src/
 │
+├── Week6/
+│   ├── corpus_files/
+│   ├── runs/
+│   └── src/
+│
 └── mp1/
     ├── data/
     ├── docs/
@@ -43,6 +48,11 @@ krishnaprasad-capstone/
 ```text
 ANTHROPIC_API_KEY=<KEY>
 ```
+#### Week 6
+```text
+ANTHROPIC_API_KEY=<KEY>
+VOYAGE_API_KEY=<KEY>
+```
 #### mp1
 ```text
 OPENAI_API_KEY=<KEY>
@@ -51,8 +61,9 @@ OPENAI_BASE_URL=<Vocareum_URL>
 
 ## 📝 Technologies Used
 * **Language:**         Python 3.14.3
-* **LLM:**              Anthropic Claude (Week 1, Week 2, Week 4), OpenAI (mp1)
-* **SDK:**              Anthropic SDK (Week 1, Week 2, Week 4), OpenAI SDK (mp1)
+* **LLM** Anthropic Claude (Week 1, Week 2, Week 4, Week 6), Voyage AI (Week 6), OpenAI (mp1)
+* **Embedding Model for RAG** Voyage AI 
+* **SDK:**              Anthropic SDK, Voyage AI SDK, OpenAI SDK (mp1)
 * **Version Control:**  Git & GitHub
 * **Environment Management:** Python .venv
 
