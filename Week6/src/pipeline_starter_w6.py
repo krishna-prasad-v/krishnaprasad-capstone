@@ -47,7 +47,7 @@ def ask_llm(question: str, ordered_matches: list[dict], system_prompt: str) -> s
 # main()
 #******************************************************************************************** 
 def main():
-    file_path  = Path(__file__).resolve().parent.parent / "corpus_files" / "object_oriented_abap_knowledge_base.md"
+    file_path  = Path(__file__).resolve().parent.parent.parent / "capstone_corpus" / "object_oriented_abap_knowledge_base.md"
 
     with open(file_path, "r", encoding="utf-8") as f:
         text = f.read()
